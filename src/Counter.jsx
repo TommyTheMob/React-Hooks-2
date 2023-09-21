@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, {useCallback, useState} from "react";
 import ResetBtn from './ResetBtn.jsx'
 import './counter.scss'
 
 const Counter = () => {
     const [counter, setCounter] = useState(0)
+
+    const reset = useCallback(() => {
+        setCounter(0)
+    }, [])
+
     return (
         <>
             <div className="counter">
@@ -25,7 +30,7 @@ const Counter = () => {
                     +
                 </button>
             </div>
-            <ResetBtn onReset={() => setCounter(0)}/>
+            <ResetBtn onReset={reset}/>
         </>
     )
 }

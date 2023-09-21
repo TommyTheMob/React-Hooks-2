@@ -1,7 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import './resetBtn.scss'
 
 const ResetBtn = ({ onReset }) => {
+    console.log('Reset btn')
     return (
         <>
             <button
@@ -14,4 +15,4 @@ const ResetBtn = ({ onReset }) => {
     )
 }
 
-export default ResetBtn
+export default memo(ResetBtn)
